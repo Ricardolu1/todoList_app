@@ -99,14 +99,16 @@ function TodoList() {
     }))
   },[])
 
-  // useEffect(()=>{
-  //   localStorage.setItem(LS_KEY , JSON.stringify(todos))
-  // },[todos])  
+  
+  useEffect(()=>{
+    const todos = JSON.parse(localStorage.getItem(LS_KEY)||[])
+    setTodos(todos)
+  },[])
 
-  // useEffect(()=>{
-  //   const todos = JSON.parse(localStorage.getItem(LS_KEY)||[])
-  //   setTodos(todos)
-  // },[])
+  useEffect(()=>{
+    localStorage.setItem(LS_KEY , JSON.stringify(todos))
+  },[todos])  
+
 
 
 
