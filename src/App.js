@@ -73,7 +73,7 @@ const Todos =  memo(function Todos(props){
   )
 })
 
-const LS_KEY = '_$-todos_'
+const LS_KEY = "_$-todos_"
 
 function TodoList() {
   const [todos,setTodos] = useState([])
@@ -104,9 +104,10 @@ function TodoList() {
     setTodos(todos)
   },[])
 
+
   useEffect(()=>{
     localStorage.setItem(LS_KEY , JSON.stringify(todos))
-  },[todos])
+  },[todos])  
 
 
 
